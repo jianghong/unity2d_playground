@@ -63,7 +63,7 @@ public class Sproutling : MonoBehaviour {
 		if (other.gameObject.tag == "Player") {
 			target = other.transform;
 			int sproutlingsAcquired = target.gameObject.GetComponent<PlayerScore>().Sproutlings;
-			xOffset = sproutlingsAcquired;
+			xOffset = sproutlingsAcquired * 0.7f;
 			target.gameObject.GetComponent<PlayerScore>().Sproutlings += 1;
 			m_boxCollider.isTrigger = true;
 		}

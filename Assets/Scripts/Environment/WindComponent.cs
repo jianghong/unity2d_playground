@@ -31,9 +31,16 @@ public class WindComponent : MonoBehaviour
 			{
 				// Get the rigid body for the object.
 				Rigidbody2D body = objects[i].attachedRigidbody;
+
+				// if object is wall, lower mass
+				if (objects[i].tag == "Obstacle") {
+					body.AddForce(Force*40000f);
+				} else {
+					// Apply the force
+					body.AddForce(Force);
+				}
 				
-				// Apply the force
-				body.AddForce(Force);
+				
 			}
 		}
 	}
